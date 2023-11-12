@@ -4,7 +4,7 @@ sources:
   - name: Resultados_ICFES
     database: mineria-2023-402723
     tables:
-      - name: Registros_ICFES
-        description: tabla con la información de los ICFES
       - name: Registros_ICFES_NEW
+        description: tabla con la información de los ICFES
+      - name: Registros_ICFES
         description: tabla con la información de los ICFES
