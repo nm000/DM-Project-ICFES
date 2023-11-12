@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "mineria-2023-402723",
+  "private_key_id": "798510940975537b609b16acc6b50e6813fa50e0",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCthuS11Wknjp6K\noKe7NqRhmtmEel4ir1Ewtej4z3cZHX7vq6M+H+j8hw8+Q07H3sN037l4CUYj5OBR\n2YOwKKCS8XEcwV4CcHFxsT2v3SPdByqX8H5XKzHVuoiTzLNjOih421sKsjNWGW0y\nrwQiNABqLNhV6iQjYNIeG2/rjiG7HoyAUUOdooAhbfH2EbxN6JCO2eNoRBN4R2u+\nDAHQlWb61vzKhmHf+Ic0gK04NC8p6m35GkHCJnVBQeXQoqYg7T0r8btX++K9KCRO\n1yJfyyF9XQcYEID6l/pwcCeo5Nij3YO8kEsonqV3Vp/BfXOShL8Vgc24LC3cyL27\nmdgozvyLAgMBAAECggEAMvR7/4sh3DxMgN+pMVfb0E+E1RqLvvqlSDz6oullCyp2\nplFL18fOBi1ww/NG1HktAwpZL47lmk+wsUhCm71qXYvpj6yWevfi0CRgPV6eE97x\nWnmD1/v2n9CtH12KRbaDwO2E3/CxE3TW9H2hJJwJjSQLCLt/DiZ1vOKIrG5pqETV\nIcGq9Xfns7NBUS+g+Z1ZQUO0PsDJzgXV2IJPvU8YXER/Wu9QD7qi4ZKKTX32M9qy\nNdjDmSVw1tUUhghvaLLR/HJDuZHQ3LS0RrKy0c3ncHfjVAawSSwWp2SRNWQNri0N\nO1qeIeAdblojB6NWJYAutuvK8cc1xVTBPvgC7+sv3QKBgQDr8y1h1Mo8/QaZ8bwr\nZ88VtpC9fToDCrz0GMdemWdRqCg427ij/bkspC2DkQwIBx+1eiaqoKPDqbAd9AJc\nC74F9sSzS5cVhaVRAr70My/vMF0sqSV2bGuNPmfS61JrKnhwwja4zmZKz4TcOAq+\nfrDW9GuEfTqz1kr/4x2NgvaWpQKBgQC8RcZgNbAKNnZgGwrWScA8MEaS7sUtKDul\nJ89khO2+VUWbgeaH71dWMqE1zDbPRMf3WYMQsm8h8P1tLVpYeWpt5byW+rbVGSkW\nQbZR/b7FUlzVc9+CrcZ6fdV7GU10BcsBetBsTq7+vFZsscvdEtbIrJIB/N12X47H\n89vPu9APbwKBgQDMr2+eH++1irbwU1GuweZW6sKTb5Ak1WrnwpspyKBlqSADezCp\nKtE6Fc7aBLlQOYXbc/UZLjQC6DC9O1HUsecN2232MEwHwqGQLnai98jMkcMynCXA\nnvuKUynUQoqEJxrGjuTT21HH8lBKjl9btCIKx4yCKfUDz5HOfCLGAWeTdQKBgA+E\nyNdBVaNh3dwKHpiPN7M+X3LZD5OrT09LusKUWmxn5vbsfC4UQmSug69Fh/cJulnf\nHPiRXKu1i44mQN4uE+G/IA5p2Aw0qLhW7kpP2hu1sEU/6dqBrGyIVsJw0XuQxqz2\njJuA2NfSemU3OpCcbuvXnalgSHjrY3+D0EiNOJctAoGANvsZJeOoX/iXumiDjx1F\nOnjZgl0rTPC2tNeLa8b6+V1XiC6VH09t5SXCnlq3YVDFBPKOmhkF1UhzFsmJuuFH\n/c7JnMY5Tg5iNdrq5LRMIozWd9YVbvgvXgcQr9G1qdF6rbFeHjpzw9314KV2byED\nwEodPOu6C7yMa6DptwqTFVw=\n-----END PRIVATE KEY-----\n",
+  "client_email": "sa-145@mineria-2023-402723.iam.gserviceaccount.com",
+  "client_id": "105831105919071515259",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sa-145%40mineria-2023-402723.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
