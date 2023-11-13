@@ -1,4 +1,5 @@
-
+venv/
 target/
 dbt_packages/
 logs/
+modelRandomForest_top9.joblib

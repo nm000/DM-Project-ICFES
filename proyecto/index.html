@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formulario de evaluación educativa</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+  </head>
+  <body>
+    <header>
+      <h1>Formulario de evaluación educativa</h1>
+    </header>
+
+    <main>
+      <form action="/procesar" method="post">
+        <section>
+          <label for="jornada">Jornada de colegio</label>
+          <select name="jornada" id="jornada">
+            <option value="COMPLETA">Completa</option>
+            <option value="MAÑANA">Mañana</option>
+            <option value="TARDE">Tarde</option>
+            <option value="NOCHE">Noche</option>
+            <option value="SABATICA">Sabática</option>
+            <option value="UNICA">Única</option>
+          </select>
+        </section>
+
+        <label for="periodo">Año de las pruebas</label>
+        <input type="number" name="periodo" />
+
+        <section>
+          <label for="educacionMadre">Educación de la madre</label>
+          <select name="educacionMadre" id="educacionMadre">
+            <option value="Primaria">Primaria</option>
+            <option value="Secundaria">Secundaria</option>
+            <option value="Técnica o Tecnológica">Técnica o Tecnológica</option>
+            <option value="Universitario">Universitario</option>
+            <option value="No aplica">No aplica</option>
+          </select>
+        </section>
+
+        <section>
+          <label for="educacionPadre">Educación del padre</label>
+          <select name="educacionPadre" id="educacionPadre">
+            <option value="Primaria">Primaria</option>
+            <option value="Secundaria">Secundaria</option>
+            <option value="Técnica o Tecnológica">Técnica o Tecnológica</option>
+            <option value="Universitario">Universitario</option>
+            <option value="No aplica">No aplica</option>
+          </select>
+        </section>
+
+        <section>
+          <label for="estrato">Estrato socioeconomico</label>
+          <select name="estrato" id="estrato">
+            <option value=1>1</option>
+            <option value=2>2</option>
+            <option value=3>3</option>
+            <option value=4>4</option>
+            <option value=5>5</option>
+            <option value=6>6</option>
+          </select>
+        </section>
+
+        <section>
+          <label for="departamento">Departamento</label>
+          <select name="departamento" id="departamento">
+            <option value="AMAZONAS">AMAZONAS</option>
+            <option value="ANTIOQUIA">ANTIOQUIA</option>
+            <option value="ARAUCA">ARAUCA</option>
+            <option value="ATLANTICO">ATLANTICO</option>
+            <option value="BOLIVAR">BOLIVAR</option>
+            <option value="BOYACA">BOYACA</option>
+            <option value="CALDAS">CALDAS</option>
+            <option value="CAQUETA">CAQUETA</option>
+            <option value="CASANARE">CASANARE</option>
+            <option value="CAUCA">CAUCA</option>
+            <option value="CESAR">CESAR</option>
+            <option value="CHOCO">CHOCO</option>
+            <option value="CORDOBA">CORDOBA</option>
+            <option value="CUNDINAMARCA">CUNDINAMARCA</option>
+            <option value="GUAINIA">GUAINIA</option>
+            <option value="GUAJIRA">GUAJIRA</option>
+            <option value="HUILA">HUILA</option>
+            <option value="LA GUAJIRA">LA GUAJIRA</option>
+            <option value="MAGDALENA">MAGDALENA</option>
+            <option value="META">META</option>
+            <option value="NARINO">NARINO</option>
+            <option value="NORTE DE SANTANDER">NORTE DE SANTANDER</option>
+            <option value="PUTUMAYO">PUTUMAYO</option>
+            <option value="QUINDIO">QUINDIO</option>
+            <option value="RISARALDA">RISARALDA</option>
+            <option value="SANTANDER">SANTANDER</option>
+            <option value="SUCRE">SUCRE</option>
+            <option value="TOLIMA">TOLIMA</option>
+            <option value="VALLE DEL CAUCA">VALLE DEL CAUCA</option>
+          </select>
+        </section>
+        
+        
+
+        <section>
+          <label for="caracterCole">Carácter del colegio</label>
+          <select name="caracterCole" id="caracterCole">
+            <option value="ACADÉMICO">Académico</option>
+            <option value="TÉCNICO">Técnico</option>
+            <option value="TÉCNICO/ACADÉMICO">Técnico/académico</option>
+            <option value="NO APLICA">No aplica</option>
+          </select>
+        </section>
+
+        <section>
+          <label for="pc">El estudiante tiene computadora?</label>
+          <select name="pc" id="pc">
+            <option value="Si">Si</option>
+            <option value="No">No</option>
+          </select>
+        </section>
+
+        <input type="submit" value="Enviar" />
+      </form>
+
+      <section class="resultado">
+        <h2>Resultado</h2>
+        <p name="resultado">{{ result or "¡Aún no has ingresado los datos!" }}</p>
+      </section>
+    </main>
+  </body>
+</html>

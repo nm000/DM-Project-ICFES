@@ -1,0 +1,7 @@
+flask
+graphene
+dbt-core
+dbt-bigquery
+requests
+joblib
+scikit-learn

@@ -1,26 +1,35 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 #from modelHandler import modelHandler
 import graphene
-#import requests
+import requests
 from graphService import Query
 
 app = Flask(__name__)
+app.template_folder = './'
 
 schema = graphene.Schema(query=Query)
 
-@app.route('/', methods=['GET'])
+@app.route('/')
+def index():
+    return render_template('index.html', css_files=['style.css'])
+
+@app.route('/procesar', methods=['POST'])
+
 def procesar():
     #http://127.0.0.1:5000/?periodo=2020&&jornada="MAÑANA"&&educacionMadre="Primaria"&&educacionPadre="Secundaria"&&estrato=2&&departamento="VAUPES"&&caracterCole="ACADÉMICO"&&pc=true
-    periodo = request.args.get('periodo')
-    jornadaCole = request.args.get('jornada')
-    eduMadre = request.args.get('educacionMadre')
-    eduPadre = request.args.get('educacionPadre')
-    estrato = request.args.get('estrato')
-    departamento = request.args.get('departamento')
-    caracterCole = request.args.get('caracterCole')
-    tienePc = request.args.get('pc')
+    url = "http://127.0.0.1:5000"
+    periodo = int(request.form.get('periodo'))
+    jornadaCole = request.form.get('jornada')
+    eduMadre = request.form.get('educacionMadre')
+    eduPadre = request.form.get('educacionPadre')
+    estrato = int(request.form.get('estrato'))
+    departamento = request.form.get('departamento')
+    caracterCole = request.form.get('caracterCole')
+    tienePc = request.form.get('pc') == "Si"
 
-   
+    data = [periodo, jornadaCole, eduMadre, eduPadre, estrato, departamento, caracterCole, tienePc]
+
+    print(data)
 
     query = f"""
         {{
@@ -32,7 +41,7 @@ def procesar():
                 estrato: {estrato},
                 departamento: {departamento},
                 caracterCole: {caracterCole},
-                tienePc: {tienePc}
+                tiene_pc: {tienePc}
             ) {{
                 predictionString
             }}
@@ -42,11 +51,11 @@ def procesar():
     result = schema.execute(query)
     print(result)
 
-    return jsonify(result.data)
+    return data
 
     
 
-if __name__ == '__main__': #Para levantar el servicio
+if __name__ == '__main__':  #Para levantar el servicio
     #ModelHandler = modelHandler()
     app.run(debug=True)
 
