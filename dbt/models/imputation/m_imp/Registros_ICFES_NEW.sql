@@ -1,5 +1,7 @@
 {{ config(materialized='table') }}
-SELECT * EXCEPT(EduPadre,EduMadre,Estrato,TienePC,TieneInternet,TieneAuto,TieneLavadora,SedePrincipal,PrivadoLibertad,ColeBilingue),
+SELECT * EXCEPT(PuntMates,PuntIngles,EduPadre,EduMadre,Estrato,TienePC,TieneInternet,TieneAuto,TieneLavadora,SedePrincipal,PrivadoLibertad,ColeBilingue),
+  CAST(PuntMates AS INTEGER) AS PuntMates,
+  CAST(PuntIngles AS INTEGER) AS PuntIngles,
   -- Transformaciones para EduPadre
   CASE
     WHEN EduPadre LIKE '%Secundaria%' THEN 'Secundaria' 

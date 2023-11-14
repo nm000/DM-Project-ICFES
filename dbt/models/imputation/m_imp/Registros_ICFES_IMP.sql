@@ -1,7 +1,6 @@
 {{ config(materialized='table') }}
 SELECT 
-  t.* EXCEPT(Periodo,CalendarioCole,Genero,MunicipioRes,EduPadre,EduMadre,JornadaCole,NaturalezaCole,MunicipioPresentacion,NombreCole,MunicipioCole,CaracterCole,ZonaCole,TienePC,TieneInternet,TieneAuto,TieneLavadora,SedePrincipal,PrivadoLibertad,ColeBilingue,Estrato,DptoRes,DptoPresentacion,DptoCole,HabitantesHogar,CuartosHogar),
-    IFNULL(t.Periodo, me.median) AS Periodo,
+  t.* EXCEPT(CalendarioCole,Genero,MunicipioRes,EduPadre,EduMadre,JornadaCole,NaturalezaCole,MunicipioPresentacion,NombreCole,MunicipioCole,CaracterCole,ZonaCole,TienePC,TieneInternet,TieneAuto,TieneLavadora,SedePrincipal,PrivadoLibertad,ColeBilingue,Estrato,DptoRes,DptoPresentacion,DptoCole,HabitantesHogar,CuartosHogar),
     IFNULL(t.CalendarioCole,mo.CalendarioCole) AS CalendarioCole,
     IFNULL(t.Genero,mo.Genero) AS Genero,
     IFNULL(t.MunicipioRes,mo.MunicipioRes) AS MunicipioRes,
@@ -28,5 +27,5 @@ SELECT
     IFNULL(t.HabitantesHogar,mo.HabitantesHogar) AS HabitantesHogar,
     IFNULL(t.CuartosHogar,mo.CuartosHogar) AS CuartosHogar
 FROM 
-  {{  source("Resultados_ICFES","Registros_ICFES_M") }} t , {{ ref("ICFES_IMP_Moda") }} mo, {{ ref("ICFES_IMP_Median") }} me
+  {{  source("Resultados_ICFES","Registros_ICFES_M") }} t , {{ ref("ICFES_IMP_Moda") }} mo
 

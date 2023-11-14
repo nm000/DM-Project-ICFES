@@ -1,1 +1,0 @@
-SELECT Periodo , COUNT(*) OVER() AS cantidad FROM {{ source("Resultados_ICFES","Registros_ICFES_M") }}
