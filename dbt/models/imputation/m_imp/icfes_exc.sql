@@ -1,2 +1,2 @@
 SELECT * 
-FROM {{ source("Resultados_ICFES","Registros_ICFES_NEW") }}
+FROM {{ source("Resultados_ICFES","Registros_ICFES_M") }}

@@ -8,3 +8,7 @@ sources:
         description: tabla con la información de los ICFES
       - name: Registros_ICFES
         description: tabla con la información de los ICFES
+      - name: Registros_ICFES_IMP
+        description: tabla con la información ya imputada
+      - name: Registros_ICFES_M
+        description: tabla con la información ya imputada
