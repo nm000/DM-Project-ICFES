@@ -1,0 +1,28 @@
+SELECT
+  (SELECT CalendarioCole FROM {{ ref("icfes_exc") }} GROUP BY CalendarioCole ORDER BY COUNT(*) DESC LIMIT 1) AS CalendarioCole,
+  (SELECT Genero FROM {{ ref("icfes_exc") }} GROUP BY Genero ORDER BY COUNT(*) DESC LIMIT 1) AS Genero,
+  (SELECT MunicipioRes FROM {{ ref("icfes_exc") }} GROUP BY MunicipioRes ORDER BY COUNT(*) DESC LIMIT 1) AS MunicipioRes,
+  (SELECT EduPadre FROM {{ ref("icfes_exc") }} GROUP BY EduPadre ORDER BY COUNT(*) DESC LIMIT 1) AS EduPadre,
+  (SELECT EduMadre FROM {{ ref("icfes_exc") }} GROUP BY EduMadre ORDER BY COUNT(*) DESC LIMIT 1) AS EduMadre,
+  (SELECT JornadaCole FROM {{ ref("icfes_exc") }} GROUP BY JornadaCole ORDER BY COUNT(*) DESC LIMIT 1) AS JornadaCole,
+  (SELECT NaturalezaCole FROM {{ ref("icfes_exc") }} GROUP BY NaturalezaCole ORDER BY COUNT(*) DESC LIMIT 1) AS NaturalezaCole,
+  (SELECT MunicipioPresentacion FROM {{ ref("icfes_exc") }} GROUP BY MunicipioPresentacion ORDER BY COUNT(*) DESC LIMIT 1) AS MunicipioPresentacion,
+  (SELECT NombreCole FROM {{ ref("icfes_exc") }} GROUP BY NombreCole ORDER BY COUNT(*) DESC LIMIT 1) AS NombreCole,
+  (SELECT MunicipioCole FROM {{ ref("icfes_exc") }} GROUP BY MunicipioCole ORDER BY COUNT(*) DESC LIMIT 1) AS MunicipioCole,
+  (SELECT CaracterCole FROM {{ ref("icfes_exc") }} GROUP BY CaracterCole ORDER BY COUNT(*) DESC LIMIT 1) AS CaracterCole,
+  (SELECT ZonaCole FROM {{ ref("icfes_exc") }} GROUP BY ZonaCole ORDER BY COUNT(*) DESC LIMIT 1) AS ZonaCole,
+  (SELECT TienePC FROM {{ ref("icfes_exc") }} GROUP BY TienePC ORDER BY COUNT(*) DESC LIMIT 1) AS TienePC,
+  (SELECT TieneInternet FROM {{ ref("icfes_exc") }} GROUP BY TieneInternet ORDER BY COUNT(*) DESC LIMIT 1) AS TieneInternet,
+  (SELECT TieneAuto FROM {{ ref("icfes_exc") }} GROUP BY TieneAuto ORDER BY COUNT(*) DESC LIMIT 1) AS TieneAuto,
+  (SELECT TieneLavadora FROM {{ ref("icfes_exc") }} GROUP BY TieneLavadora ORDER BY COUNT(*) DESC LIMIT 1) AS TieneLavadora,
+  (SELECT SedePrincipal FROM {{ ref("icfes_exc") }} GROUP BY SedePrincipal ORDER BY COUNT(*) DESC LIMIT 1) AS SedePrincipal,
+  (SELECT PrivadoLibertad FROM {{ ref("icfes_exc") }} GROUP BY PrivadoLibertad ORDER BY COUNT(*) DESC LIMIT 1) AS PrivadoLibertad,
+  (SELECT ColeBilingue FROM {{ ref("icfes_exc") }} GROUP BY ColeBilingue ORDER BY COUNT(*) DESC LIMIT 1) AS ColeBilingue,
+  (SELECT Estrato FROM {{ ref("icfes_exc") }} GROUP BY Estrato ORDER BY COUNT(*) DESC LIMIT 1) AS Estrato,
+  (SELECT DptoRes FROM {{ ref("icfes_exc") }} GROUP BY DptoRes ORDER BY COUNT(*) DESC LIMIT 1) AS DptoRes,
+  (SELECT DptoPresentacion FROM {{ ref("icfes_exc") }} GROUP BY DptoPresentacion ORDER BY COUNT(*) DESC LIMIT 1) AS DptoPresentacion,
+  (SELECT DptoCole FROM {{ ref("icfes_exc") }} GROUP BY DptoCole ORDER BY COUNT(*) DESC LIMIT 1) AS DptoCole,
+  (SELECT HabitantesHogar FROM {{ ref("icfes_exc") }} GROUP BY HabitantesHogar ORDER BY COUNT(*) DESC LIMIT 1) AS HabitantesHogar,
+  (SELECT CuartosHogar FROM {{ ref("icfes_exc") }} GROUP BY CuartosHogar ORDER BY COUNT(*) DESC LIMIT 1) AS CuartosHogar
+
+
