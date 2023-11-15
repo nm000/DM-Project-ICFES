@@ -1,7 +1,6 @@
 {{ config(materialized='table') }}
-SELECT * EXCEPT(PuntMates,PuntIngles,EduPadre,EduMadre,Estrato,TienePC,TieneInternet,TieneAuto,TieneLavadora,SedePrincipal,PrivadoLibertad,ColeBilingue),
-  CAST(PuntMates AS INTEGER) AS PuntMates,
-  CAST(PuntIngles AS INTEGER) AS PuntIngles,
+SELECT * EXCEPT(Periodo,PuntMates,PuntIngles,EduPadre,EduMadre,Estrato,TienePC,TieneInternet,TieneAuto,TieneLavadora,SedePrincipal,PrivadoLibertad,ColeBilingue, Nacionalidad, PaisResidencia,PuntCiencias,PuntLectura,PuntSociales,DesempIngles,MunicipioRes,MunicipioPresentacion,NombreCole,MunicipioCole,DptoRes,DptoPresentacion,DptoCole,HabitantesHogar,CuartosHogar),
+  CAST(LEFT(CAST(Periodo AS STRING), 4) AS INT64) AS Periodo,
   -- Transformaciones para EduPadre
   CASE
     WHEN EduPadre LIKE '%Secundaria%' THEN 'Secundaria' 
