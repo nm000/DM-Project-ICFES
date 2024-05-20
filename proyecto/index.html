@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <title>Formulario de evaluación educativa</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}"> -->
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
@@ -12,9 +13,16 @@
 
     <main>
       <form action="/procesar" method="post">
-        <section>
-          <label for="jornada">Jornada de colegio</label>
-          <select name="jornada" id="jornada">
+        <div class="input-container">
+          <label class="input-label-select" for="jornada"
+            >Jornada de colegio</label
+          >
+          <select
+            name="jornada"
+            id="jornada"
+            class="input"
+            aria-placeholder="Jornada de colegio"
+          >
             <option value="COMPLETA">Completa</option>
             <option value="MAÑANA">Mañana</option>
             <option value="TARDE">Tarde</option>
@@ -22,48 +30,63 @@
             <option value="SABATINA">Sabatina</option>
             <option value="UNICA">Única</option>
           </select>
-        </section>
+        </div>
 
-        <label for="periodo">Año de las pruebas</label>
-        <input type="number" name="periodo" />
+        <div class="input-container">
+          <input
+            type="number"
+            name="periodo"
+            class="input"
+            placeholder="Año de las pruebas"
+          />
+          <label for="periodo" class="input-label">Año de las pruebas</label>
+        </div>
 
-        <section>
-          <label for="educacionMadre">Educación de la madre</label>
-          <select name="educacionMadre" id="educacionMadre">
+        <div class="input-container">
+          <label for="educacionMadre" class="input-label-select"
+            >Educación de la madre</label
+          >
+          <select name="educacionMadre" id="educacionMadre" class="input">
             <option value="Primaria">Primaria</option>
             <option value="Secundaria">Secundaria</option>
             <option value="Técnica o tecnológica">Técnica o Tecnológica</option>
             <option value="Universitario">Universitario</option>
             <option value="No Aplica">No aplica</option>
           </select>
-        </section>
+        </div>
 
-        <section>
-          <label for="educacionPadre">Educación del padre</label>
-          <select name="educacionPadre" id="educacionPadre">
+        <div class="input-container">
+          <label for="educacionPadre" class="input-label-select"
+            >Educación del padre</label
+          >
+          <select name="educacionPadre" id="educacionPadre" class="input">
             <option value="Primaria">Primaria</option>
             <option value="Secundaria">Secundaria</option>
             <option value="Técnica o tecnológica">Técnica o Tecnológica</option>
             <option value="Universitario">Universitario</option>
             <option value="No Aplica">No aplica</option>
           </select>
-        </section>
+        </div>
 
-        <section>
-          <label for="estrato">Estrato socioeconomico</label>
-          <select name="estrato" id="estrato">
-            <option value=1>1</option>
-            <option value=2>2</option>
-            <option value=3>3</option>
-            <option value=4>4</option>
-            <option value=5>5</option>
-            <option value=6>6</option>
+        <div class="input-container">
+          <label for="estrato" class="input-label-select"
+            >Estrato socioeconomico</label
+          >
+          <select name="estrato" id="estrato" class="input">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
           </select>
-        </section>
+        </div>
 
-        <section>
-          <label for="departamento">Departamento</label>
-          <select name="departamento" id="departamento">
+        <div class="input-container">
+          <label for="departamento" class="input-label-select"
+            >Departamento</label
+          >
+          <select name="departamento" id="departamento" class="input">
             <option value="AMAZONAS">AMAZONAS</option>
             <option value="ANTIOQUIA">ANTIOQUIA</option>
             <option value="ARAUCA">ARAUCA</option>
@@ -94,35 +117,58 @@
             <option value="TOLIMA">TOLIMA</option>
             <option value="VALLE DEL CAUCA">VALLE DEL CAUCA</option>
           </select>
-        </section>
-        
-        
+        </div>
 
-        <section>
-          <label for="caracterCole">Carácter del colegio</label>
-          <select name="caracterCole" id="caracterCole">
+        <div class="input-container">
+          <label for="caracterCole" class="input-label-select"
+            >Carácter del colegio</label
+          >
+          <select name="caracterCole" id="caracterCole" class="input">
             <option value="ACADÉMICO">Académico</option>
             <option value="TÉCNICO">Técnico</option>
             <option value="TÉCNICO/ACADÉMICO">Técnico/académico</option>
             <option value="NO APLICA">No aplica</option>
           </select>
-        </section>
+        </div>
 
-        <section>
-          <label for="pc">El estudiante tiene computadora?</label>
-          <select name="pc" id="pc">
+        <div class="input-container">
+          <label for="pc" class="input-label-select"
+            >El estudiante tiene computadora?</label
+          >
+          <select name="pc" id="pc" class="input">
             <option value="Si">Si</option>
             <option value="No">No</option>
           </select>
-        </section>
+        </div>
 
         <input type="submit" value="Enviar" />
       </form>
 
       <section class="resultado">
         <h2>Resultado</h2>
-        <p name="resultado">{{ result or "¡Aún no has ingresado los datos!" }}</p>
+        <p name="resultado">
+          {{ result or "¡Aún no has ingresado los datos!" }}
+        </p>
       </section>
+      <div id="loader">
+        <div class="container">
+          <div class="spinner"></div>
+          <p>Por favor espere mientras el sistema calcula las lecturas</p>
+        </div>
+      </div>
     </main>
+
+    <script>
+      const form = document.querySelector("form");
+      const loader = document.getElementById("loader");
+
+      form.addEventListener("submit", () => {
+        loader.style.display = "block";
+      });
+
+      window.addEventListener("load", () => {
+        loader.style.display = "none";
+      });
+    </script>
   </body>
 </html>
